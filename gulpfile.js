@@ -67,6 +67,9 @@ gulp.task('build:css', ['clean'], function () {
     .pipe(gulp.dest('public'))
 })
 
-
 gulp.task('build', ['build:index', 'build:app'])
 gulp.task('default', ['build'])
+
+gulp.task('test', ['build'], function () {
+  return true;
+})
