@@ -28,15 +28,10 @@ gulp.task('build:server', ['clean'], function () {
   jsNPMDependencies, sometimes order matters here! so becareful!
 */
 var jsNPMDependencies = [
-  'es6-shim/es6-shim.min.js',
-  'systemjs/dist/system-polyfills.js',
-  'angular2/es6/dev/src/testing/shims_for_IE.js',
-
-  'angular2/bundles/angular2-polyfills.js',
-  'systemjs/dist/system.src.js',
-  'rxjs/bundles/Rx.js',
-  'angular2/bundles/angular2.dev.js',
-  'angular2/bundles/router.dev.js'
+  'core-js/client/shim.min.js',
+  'zone.js/dist/zone.js',
+  'reflect-metadata/Reflect.js',
+  'systemjs/dist/system.src.js'
 ]
 
 gulp.task('build:index', ['clean', 'build:css'], function () {
@@ -46,9 +41,25 @@ gulp.task('build:index', ['clean', 'build:css'], function () {
   var copyJsNPMDependencies = gulp.src(mappedPaths, {base: 'node_modules'})
       .pipe(gulp.dest('public/libs'))
 
+    var copyAngular = gulp.src(['node_modules/@angular/**/*'])
+                    .pipe(gulp.dest('public/libs/@angular'))
+
+    var copyRxjs = gulp.src(['node_modules/rxjs/**/*'])
+                    .pipe(gulp.dest('public/libs/rxjs'))
+
   // Let's copy our index into dist
   var copyIndex = gulp.src('app/static/index.html')
       .pipe(gulp.dest('public'))
+
+  var copyTemplates = gulp.src('app/**/*.html')
+      .pipe(gulp.dest('public'))
+
+  var copyTemplates = gulp.src('app/**/*.css')
+      .pipe(gulp.dest('public'))
+
+  var copySysJsConfig = gulp.src('app/systemjs.config.js')
+      .pipe(gulp.dest('public'))
+
   return [copyJsNPMDependencies, copyIndex]
 })
 

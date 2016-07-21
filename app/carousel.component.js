@@ -9,18 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Phi Kappa Tau";
+var CarouselComponent = (function () {
+    function CarouselComponent() {
+        this.idxs = [];
     }
-    AppComponent = __decorate([
+    CarouselComponent.prototype.ngOnInit = function () {
+        for (var i = 0; i < this.images.length; i++) {
+            this.idxs.push(i);
+        }
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], CarouselComponent.prototype, "images", void 0);
+    CarouselComponent = __decorate([
         core_1.Component({
-            selector: 'root',
-            template: '<title>{{title}}</title><h1>This is da root</h1>'
+            selector: 'carousel',
+            templateUrl: 'app/carousel.component.html',
+            styleUrls: ['app/carousel.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CarouselComponent);
+    return CarouselComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CarouselComponent = CarouselComponent;
+//# sourceMappingURL=carousel.component.js.map

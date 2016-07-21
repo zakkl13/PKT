@@ -6,13 +6,15 @@ import * as bodyParser from 'body-parser'
 import * as logger from 'morgan'
 
 var app = express()
+app.use(express.static(path.join(__dirname, '../public')))
+app.disable("x-powered-by");
 
-// Configuration
-// TODO: configure Angular Universal - https://github.com/angular/universal
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(logger('dev'))
-app.use('/', express.static(path.join(__dirname, '../public')))
-
+app.get('/health', function (req, res) {
+  res.send("ok")
+});
 
 export var Instance = http.createServer(app)

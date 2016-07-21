@@ -1,0 +1,62 @@
+header {
+    font-family: sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+.headerimg {
+    
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+.indent {
+    margin-left: 25px;
+}
+
+/*nav {
+    
+    text-align: center;
+}
+
+
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: large;
+  font-style: bold;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+  width: 150px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.router-link-active {
+  color: #039be5;
+}*/
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+#footer-text a:link, a:visited {
+    color: #97cdff;
+}
+
+/*.container .text-muted {
+  margin: 20px 0;
+}*/

@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Phi Kappa Tau";
+var RushComponent = (function () {
+    function RushComponent() {
+        this.title = "Rush";
     }
-    AppComponent = __decorate([
+    RushComponent = __decorate([
         core_1.Component({
-            selector: 'root',
-            template: '<title>{{title}}</title><h1>This is da root</h1>'
+            selector: 'rush',
+            templateUrl: 'app/rush.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], RushComponent);
+    return RushComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.RushComponent = RushComponent;
+//# sourceMappingURL=rush.component.js.map

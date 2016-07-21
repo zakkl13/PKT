@@ -9,18 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Phi Kappa Tau";
+var carousel_component_1 = require('./carousel.component');
+var IndexComponent = (function () {
+    function IndexComponent() {
+        this.title = "Index";
+        this.subtitle = "Epsilon Chi Chapter at Virginia Tech";
+        this.index_images = ["includes/images/no_box.png", "includes/images/clouds.jpg", "includes/images/torg-sunset.jpg"];
     }
-    AppComponent = __decorate([
+    IndexComponent = __decorate([
         core_1.Component({
-            selector: 'root',
-            template: '<title>{{title}}</title><h1>This is da root</h1>'
+            selector: 'index',
+            templateUrl: 'app/index.component.html',
+            styleUrls: ['app/index.component.css'],
+            directives: [carousel_component_1.CarouselComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], IndexComponent);
+    return IndexComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.IndexComponent = IndexComponent;
+//# sourceMappingURL=index.component.js.map
