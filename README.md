@@ -5,3 +5,9 @@
 ### Ideas
 * Put on A-Frames
 * Put on Rush shirts
+
+
+### Credits
+Thanks to:
+https://github.com/vladotesanovic/angular2-express-starter
+minimal-mean

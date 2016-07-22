@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/b97c0d5a222094e965a484606ed03a7e5e844c46/mongodb/mongodb.d.ts",
+    "raw": "registry:dt/mongodb#2.1.0+20160425144419",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/b97c0d5a222094e965a484606ed03a7e5e844c46/mongodb/mongodb.d.ts"
+  }
+}

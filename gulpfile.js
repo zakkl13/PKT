@@ -70,7 +70,7 @@ gulp.task('build:app', ['clean'], function () {
     .pipe(ts(tsProject))
   return tsResult.js
     .pipe(sourcemaps.write())
-		.pipe(gulp.dest('public'))
+	.pipe(gulp.dest('public'))
 })
 
 gulp.task('build:css', ['clean'], function () {

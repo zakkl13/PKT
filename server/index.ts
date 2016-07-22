@@ -1,11 +1,21 @@
+/// <reference path="../typings/index.d.ts" />
 import * as config from './config'
-import * as server from './server'
+import * as http from 'http';
+var debug = require('debug')('server:server');
 
-function start() {
-  server.Instance.listen(config.port, () => {
-    console.log(`Server listening on port ${config.port}...`)
-  })
+var app = require('./server').app;
+
+
+var server = http.createServer(app);
+
+server.listen(config.port);
+server.on('listening', onListening);
+
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
 }
-
-start()
-

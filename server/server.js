@@ -1,15 +1,13 @@
 "use strict";
-const http = require('http');
 const path = require('path');
 const express = require('express');
-const bodyParser = require('body-parser');
-const logger = require('morgan');
+const body_parser_1 = require("body-parser");
+const health_1 = require('./routes/health');
 var app = express();
-// Configuration
-// TODO: configure Angular Universal - https://github.com/angular/universal
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(logger('dev'));
-app.use('/', express.static(path.join(__dirname, '../public')));
-exports.Instance = http.createServer(app);
+exports.app = app;
+app.disable("x-powered-by");
+app.use(body_parser_1.json());
+app.use(body_parser_1.urlencoded({ extended: true }));
+app.use("/health", health_1.healthRouter);
+app.use(express.static(path.join(__dirname, '../public')));
 //# sourceMappingURL=server.js.map
