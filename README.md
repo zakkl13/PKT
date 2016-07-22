@@ -9,5 +9,5 @@
 
 ### Credits
 Thanks to:
-https://github.com/vladotesanovic/angular2-express-starter
-minimal-mean
+* https://github.com/vladotesanovic/angular2-express-starter
+* https://github.com/excellalabs/minimal-mean
