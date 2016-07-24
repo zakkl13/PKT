@@ -31,7 +31,9 @@ var jsNPMDependencies = [
   'core-js/client/shim.min.js',
   'zone.js/dist/zone.js',
   'reflect-metadata/Reflect.js',
-  'systemjs/dist/system.src.js'
+  'systemjs/dist/system.src.js',
+  'moment/moment.js',
+  "ng2-bootstrap/bundles/ng2-bootstrap.min.js"
 ]
 
 gulp.task('build:index', ['clean', 'build:css'], function () {
@@ -54,8 +56,11 @@ gulp.task('build:index', ['clean', 'build:css'], function () {
   var copyTemplates = gulp.src('app/**/*.html')
       .pipe(gulp.dest('public'))
 
-  var copyTemplates = gulp.src('app/**/*.css')
+  var copyTemplateCss = gulp.src('app/**/*.css')
       .pipe(gulp.dest('public'))
+
+  var copyImgs = gulp.src('app/static/fraternity.jpg')
+      .pipe(gulp.dest('public/static'))
 
   var copySysJsConfig = gulp.src('app/systemjs.config.js')
       .pipe(gulp.dest('public'))
@@ -82,5 +87,19 @@ gulp.task('build', ['build:index', 'build:app'])
 gulp.task('default', ['build'])
 
 gulp.task('test', ['build'], function () {
-  return true;
+  return true
+})
+
+gulp.task('frontend', function () {
+  var copyIndex = gulp.src('app/static/index.html')
+      .pipe(gulp.dest('public'))
+
+  copyCss = gulp.src('app/static/styles.css')
+    .pipe(gulp.dest('public'))
+
+  var copyTemplates = gulp.src('app/**/*.html')
+      .pipe(gulp.dest('public'))
+
+  return gulp.src('app/**/*.css')
+      .pipe(gulp.dest('public'))
 })

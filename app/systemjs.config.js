@@ -9,7 +9,8 @@
     'app':                        './', // 'dist',
 
     '@angular':                   'libs/@angular',
-    'rxjs':                       'libs/rxjs'
+    'rxjs':                       'libs/rxjs',
+    'moment':                     'libs/moment/moment.js'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension

@@ -4,9 +4,19 @@ html {
 }
 
 body {
-  margin-bottom: 20px;
+  background-color: lightgray;
 }
 
-.navbar {
-
+.navbar-static-top {
+      margin-bottom: 0px !important;
 }
+
+/*@media (max-width: 979px){
+    body{
+      padding-left:0 !important;
+      padding-right: 0 !important;
+    }
+
+
+
+}*/

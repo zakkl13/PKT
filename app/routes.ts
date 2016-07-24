@@ -4,6 +4,7 @@ import { Type } from '@angular/core';
 
 import { IndexComponent } from './components/index.component'
 import { RushComponent } from './components/rush.component'
+import { LeadershipComponent } from './components/leadership.component'
 import { HealthComponent } from './components/health.component'
 const routes: RouterConfig = [
     {
@@ -16,16 +17,12 @@ const routes: RouterConfig = [
     },
     {
         path: 'leadership',
-        component: <Type>RushComponent
+        component: <Type>LeadershipComponent
     },
     {
         path: 'contact',
         component: <Type>IndexComponent
     },
-    {
-        path: 'health',
-        component: <Type>HealthComponent
-    }
 ];
 
 export const APP_ROUTER_PROVIDERS = [

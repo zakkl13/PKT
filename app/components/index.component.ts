@@ -11,5 +11,4 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 export class IndexComponent {
     title: string = "Index";
     subtitle: string = "Epsilon Chi Chapter at Virginia Tech";
-    index_images: string[] = ["includes/images/no_box.png", "includes/images/clouds.jpg", "includes/images/torg-sunset.jpg"];
 }
