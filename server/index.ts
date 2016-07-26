@@ -5,7 +5,6 @@ var debug = require('debug')('server:server');
 
 var app = require('./server').app;
 
-
 var server = http.createServer(app);
 
 server.listen(config.port);
