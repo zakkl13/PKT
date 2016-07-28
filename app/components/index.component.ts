@@ -6,7 +6,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     selector: 'index',
     templateUrl: './components/index.component.html',
     styleUrls: ['./components/index.component.css'],
-    directives: [CarouselComponent, ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES]
 })
 export class IndexComponent {
     title: string = "Index";

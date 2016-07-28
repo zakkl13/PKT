@@ -1,14 +1,13 @@
 "use strict";
+var path = require('path');
 var express = require('express');
+var body_parser_1 = require("body-parser");
+var health_1 = require('./routes/health');
 var app = express();
 exports.app = app;
-// app.disable("x-powered-by");
-// app.use(json());
-// app.use(urlencoded({ extended: true }));
-// app.use("/health", healthRouter);
-// app.use(express.static(path.join(__dirname, '../public')));
-//Coming soon
-app.use("/", function (req, res, next) {
-    res.send("<h1>Coming Soon</h1>");
-});
+app.disable("x-powered-by");
+app.use(body_parser_1.json());
+app.use(body_parser_1.urlencoded({ extended: true }));
+app.use("/health", health_1.healthRouter);
+app.use(express.static(path.join(__dirname, '../public')));
 //# sourceMappingURL=server.js.map

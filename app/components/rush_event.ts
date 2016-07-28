@@ -1,5 +1,5 @@
 export class RushEvent {
-  day : Date;
+  day : string;
   title: string;
   img: string;
   body: string;

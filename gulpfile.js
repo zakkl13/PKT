@@ -59,7 +59,10 @@ gulp.task('build:index', ['clean', 'build:css'], function () {
   var copyTemplateCss = gulp.src('app/**/*.css')
       .pipe(gulp.dest('public'))
 
-  var copyImgs = gulp.src('app/static/fraternity.jpg')
+  var copyJpg = gulp.src('app/static/*.jpg')
+      .pipe(gulp.dest('public/static'))
+
+  var copyPng = gulp.src('app/static/*.png')
       .pipe(gulp.dest('public/static'))
 
   var copySysJsConfig = gulp.src('app/systemjs.config.js')

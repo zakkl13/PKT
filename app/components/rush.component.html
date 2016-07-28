@@ -1,20 +1,35 @@
 <div class="container">
-<center><h3>2016 Fall Rush Events</h3></center>
+  <br />
+<center><img class="img-responsive center-block" src="static/formal_lockup.jpg" /></center>
 <br />
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p style="text-align: center">
+      Looking to join a fraternity? Do you want to become a man of character and distinction?
+      Feel free to come to a rush event and meet the brothers of Phi Kappa Tau.
+      Join our Facebook <a href="#">group</a> for more information and updates. Any questions or concerns? Text or call
+      our Collin Choy at 410-555-5555
+    </p>
+  </div>
+</div>
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div *ngFor= "let event of events; let i=index"  class="panel panel-default">
       <div class="panel-heading" role="tab" id="heading{{i}}">
         <h4 class="panel-title">
           <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="true" [attr.aria-controls]="'#collapse'+i">
-            {{event.title}} - {{event.day.toString()}}
+            {{event.title}} - {{event.day}}
           </a>
       </h4>
     </div>
     <div id="collapse{{i}}" class="panel-collapse collapse out" role="tabpanel" [attr.aria-labelledby]="'heading'+i">
       <div class="panel-body">
-        <!--<img [src]="event.img" style="width: 100%;" />-->
-        {{event.body}}
+        <img [src]="event.img" class="img-responsive center-block" style="height: 350px;" />
+        <br />
+
+        <div class="col-md-8 col-md-offset-2 event_body">{{event.body}}</div>
+        <br />
       </div>
     </div>
   </div>
