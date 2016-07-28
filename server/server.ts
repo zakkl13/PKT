@@ -8,7 +8,7 @@ import * as favicon from "serve-favicon";
 
 import { healthRouter } from './routes/health';
 var app = express();
-app.use(favicon(__dirname + '/public/static/favicon.png'));
+app.use(favicon(path.join(__dirname, '../public/static/favicon.png')));
 
 app.disable("x-powered-by");
 
