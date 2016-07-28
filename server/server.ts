@@ -3,10 +3,13 @@ import * as url from 'url';
 import * as path from 'path';
 import * as express from 'express';
 import { json, urlencoded } from "body-parser";
+import * as favicon from "serve-favicon";
 
 
 import { healthRouter } from './routes/health';
 var app = express();
+app.use(favicon(__dirname + '/public/static/favicon.png'));
+
 app.disable("x-powered-by");
 
 app.use(json());
