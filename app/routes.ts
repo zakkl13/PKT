@@ -2,10 +2,11 @@ import { provideRouter, RouterConfig } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 import { Type } from '@angular/core';
 
-import { IndexComponent } from './components/index.component'
-import { RushComponent } from './components/rush.component'
-import { LeadershipComponent } from './components/leadership.component'
-import { HealthComponent } from './components/health.component'
+import { IndexComponent } from './components/index.component';
+import { RushComponent } from './components/rush.component';
+import { LeadershipComponent } from './components/leadership.component';
+import { SignupComponent } from './components/signup.component';
+
 const routes: RouterConfig = [
     {
         path: 'rush',
@@ -23,6 +24,10 @@ const routes: RouterConfig = [
         path: 'contact',
         component: <Type>IndexComponent
     },
+    {
+        path: 'list',
+        component: <Type>SignupComponent
+    }
 ];
 
 export const APP_ROUTER_PROVIDERS = [

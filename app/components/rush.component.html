@@ -13,26 +13,32 @@
     </p>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 container">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div *ngFor= "let event of events; let i=index"  class="panel panel-default">
+          <div class="panel-heading" role="tab" id="heading{{i}}">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="true" [attr.aria-controls]="'#collapse'+i">
+                {{event.title}} - {{event.day}}
+              </a>
+          </h4>
+        </div>
+        <div id="collapse{{i}}" class="panel-collapse collapse out" role="tabpanel" [attr.aria-labelledby]="'heading'+i">
+          <div class="panel-body" style="padding: 0px;">
+            <img [src]="event.img" class="img-responsive center-block" style="width: 100%; max-height: 250px;" />
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div *ngFor= "let event of events; let i=index"  class="panel panel-default">
-      <div class="panel-heading" role="tab" id="heading{{i}}">
-        <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}" aria-expanded="true" [attr.aria-controls]="'#collapse'+i">
-            {{event.title}} - {{event.day}}
-          </a>
-      </h4>
-    </div>
-    <div id="collapse{{i}}" class="panel-collapse collapse out" role="tabpanel" [attr.aria-labelledby]="'heading'+i">
-      <div class="panel-body" style="padding: 0px;">
-        <img [src]="event.img" class="img-responsive center-block" style="width: 100%; max-height: 250px;" />
-
-        <div class="col-md-10 col-md-offset-1 event_body">
-                  <!--<hr />-->
-                  <p>{{event.body}}</p></div>
-        <br />
+            <div class="col-md-10 col-md-offset-1 event_body">
+                      <!--<hr />-->
+                      <p>{{event.body}}</p></div>
+            <br />
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+<div class="row">
+  <div class=""><a [routerLink] = "['/list']"><button type="button" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span> &raquo;</button></a></div>
 </div>
 </div>
