@@ -9,23 +9,31 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-              <span style="color: rgb(167, 169, 172);">{{title}}</span>
+              {{title}}
               </a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav centered">
               <li><a [routerLink]="['/']">Home</a></li>
               <li><a [routerLink]="['/rush']">Rush</a></li>
               <li><a [routerLink]="['/leadership']">Leadership</a></li>
 
             </ul>
+
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
 </header>
 
-
-<!--<div class="separator"></div>-->
 <router-outlet></router-outlet>
-<!--<div class="separator"></div>-->
 
+<hr />
+
+<footer>
+  <div class="container" id="foot_bar">
+    <p class="text-muted"><a href="https://www.facebook.com/VT-Phi-Kappa-Tau-356927551003931" target="_blank">Facebook</a> |
+                          <a href="https://twitter.com/vtphikappatau" target="_blank">Twitter</a>  |
+                          <a href="http://vtifc.org" target="_blank">Virginia Tech IFC</a> |
+                          <a href="http://phikappatau.org" target="_blank">Phi Kappa Tau</a></p>
+    </div>
+</footer>
