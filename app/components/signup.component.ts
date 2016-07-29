@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { NgForm }    from '@angular/forms';
 
-import {SignupData} from './signup-data.ts';
+import {SignupData} from './signup-data';
 
 @Component({
     selector: 'rush',
