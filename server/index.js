@@ -1,7 +1,7 @@
 "use strict";
 /// <reference path="../typings/index.d.ts" />
-var config = require('./config');
-var http = require('http');
+const config = require('./config');
+const http = require('http');
 var debug = require('debug')('server:server');
 var app = require('./server').app;
 var server = http.createServer(app);

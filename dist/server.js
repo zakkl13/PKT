@@ -54,7 +54,6 @@ function getInstance() {
 exports.getInstance = getInstance;
 
 "use strict";
-/// <reference path="../typings/index.d.ts" />
 var config = require('./config');
 var http = require('http');
 var debug = require('debug')('server:server');

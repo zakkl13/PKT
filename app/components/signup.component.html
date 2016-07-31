@@ -2,31 +2,37 @@
   <div class="page-header text-center">
     <h1>We'll Hit You Up <small>Get on the list - you'll get rush event updates & more.</small></h1>
   </div>
+
   <div class="col-md-6 col-md-offset-3 container">
-    <form role="form">
+    <div [hidden]="hide_success_bar" class="alert alert-success" role="alert"><strong>Thank You</strong> Your Submission Has Been Recieved</div>
+
+    <form role="form" (ngSubmit)="onSubmit()" #signupForm="ngForm">
       <div class="form-group">
         <div class="input-group-lg">
           <label for="name"></label>
-          <input type="text" class="form-control" placeholder="Name" id="name" required>
+          <input [(ngModel)]="model.name" type="text" class="form-control" placeholder="Name" name="name" #name="ngModel" required>
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            Name is required
+          </div>
         </div>
 
 
         <label for="email"></label>
         <div class="input-group input-group-lg">
-          <input type="text" class="form-control" placeholder="Email" id="email" aria-describedby="a2" required>
+          <input [(ngModel)]="model.email" type="text" class="form-control" placeholder="Email" name="email" aria-describedby="a2" required>
           <span class="input-group-addon" id="a2">@vt.edu</span>
         </div>
       <div class="input-group-lg">
         <label for="phone"></label>
-        <input type="text" class="form-control" placeholder="Phone Number (Optional)" id="phone">
+        <input [(ngModel)]="model.phone" type="text" class="form-control" placeholder="Phone Number (Optional)" name="phone">
       </div>
       <div class="input-group-lg">
         <label for="rapper"></label>
-        <input type="text" class="form-control" placeholder="Favorite Rapper" id="rapper">
+        <input [(ngModel)]="model.rapper" type="text" class="form-control" placeholder="Favorite Rapper" name="rapper">
       </div>
       <br />
           </div>
-      <button type="submit" class="btn btn-success btn-lg center-block">Submit</button>
+      <button type="submit" class="btn btn-success btn-lg center-block" [disabled]="!signupForm.form.valid">Submit</button>
     </form>
   </div>
 </div>
