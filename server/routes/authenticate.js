@@ -21,8 +21,8 @@ AuthRouter.post('/', function (req, res) {
         if (authenticated) {
             var token = jwt.sign(req.body.username, secret);
             res.status(200);
-            res.json({ success: false,
-                message: "Username or password does not exist.",
+            res.json({ success: true,
+                message: "You've been authenticated.",
                 token: token });
         }
         else {

@@ -24,6 +24,7 @@ export function connect() {
   })
 }
 
+
 export function getInstance() {
   if(!dbInstance) {
     throw "Database not yet instantiated"

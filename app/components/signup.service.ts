@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class SignupService {
   constructor (private http: Http) {};
+  private signupUrl ="api/signup";
 
   handleError(error: any) {
     let errMsg = (error.message) ? error.message :
@@ -22,7 +23,7 @@ export class SignupService {
     let body = JSON.stringify(data);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post("api/signup", body, options)
+    return this.http.post(this.signupUrl, body, options)
               .catch(this.handleError);
   }
 }

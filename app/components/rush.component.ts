@@ -18,6 +18,6 @@ export class RushComponent implements OnInit {
     constructor(private rushEventService: RushEventService) { }
 
     ngOnInit() {
-        this.events = this.rushEventService.getEvents();
+        this.rushEventService.getEvents().then(events => this.events = events);
     }
 }
