@@ -1,14 +1,14 @@
 import mongodb = require('mongodb');
 import * as database from '../database';
 
-export function getEvents() {
+export function getLeaders() {
   return new Promise(function(resolve, reject) {
     database.connect().then(function(db: mongodb.Db) {
-        var events = [];
-        db.collection("events").find({active: true}).forEach(function (result) {
-          if (result) events.push(result);
+        var leaders = [];
+        db.collection("leaders").find({}).forEach(function (result) {
+          if (result) leaders.push(result);
         }, function() {
-          resolve(events);
+          resolve(leaders);
         });
       })
       .catch(function(err) {

@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
-import { RushEvent } from './rush_event';
 
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
+import { Leader } from './leader';
+import { LEADERS } from './static-leaders'
+
 @Injectable()
-export class RushEventService {
+export class LeaderService {
   constructor (private http: Http) {};
-  private rusheventUrl: string = "api/rushevents";
+  private rusheventUrl: string = "api/leaders";
 
   private handleError(error: any) {
     let errMsg = (error.message) ? error.message :
@@ -19,9 +21,9 @@ export class RushEventService {
     return Observable.throw(errMsg);
   }
 
-  getEvents() : Observable<RushEvent[]> {
+  getLeaders() : Observable<Leader[]> {
     return this.http.get(this.rusheventUrl)
-                    .map(res => res.json() as RushEvent[])
-                    .catch(this.handleError);
+                .map(res => res.json() as Leader[])
+                .catch(this.handleError);
   }
 }

@@ -1,18 +1,21 @@
 import { Component} from '@angular/core';
 import { NgForm }    from '@angular/forms';
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
 import {SignupData} from './signup.data';
 import {SignupService} from './signup.service'
 
 @Component({
-    selector: 'rush',
+    selector: 'signup',
     templateUrl: './components/signup.component.html',
     styleUrls: ['./components/signup.component.css'],
-    providers: [SignupService]
+    providers: [SignupService],
+    directives: [ROUTER_DIRECTIVES]
 })
 export class SignupComponent {
 
-      constructor(private signupService: SignupService) {}
+      constructor(private signupService: SignupService,
+                  private router: Router) {}
       model = new SignupData("", "", "");
       hide_success_bar = true;
 
@@ -26,6 +29,5 @@ export class SignupComponent {
               error => console.log(error)
           );
         }
-
 
 }

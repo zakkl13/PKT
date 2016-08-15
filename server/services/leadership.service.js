@@ -1,14 +1,14 @@
 "use strict";
 const database = require('../database');
-function getEvents() {
+function getLeaders() {
     return new Promise(function (resolve, reject) {
         database.connect().then(function (db) {
-            var events = [];
-            db.collection("events").find({ active: true }).forEach(function (result) {
+            var leaders = [];
+            db.collection("leaders").find({}).forEach(function (result) {
                 if (result)
-                    events.push(result);
+                    leaders.push(result);
             }, function () {
-                resolve(events);
+                resolve(leaders);
             });
         })
             .catch(function (err) {
@@ -16,5 +16,5 @@ function getEvents() {
         });
     });
 }
-exports.getEvents = getEvents;
-//# sourceMappingURL=rush_event.service.js.map
+exports.getLeaders = getLeaders;
+//# sourceMappingURL=leadership.service.js.map

@@ -1,3 +1,17 @@
 <div class="container">
-<center><h3>The {{title}} page</h3></center>
+  <div class="page-header text-center">
+    <h1>Executive Board <small>Leaders of the PKT Epsilon Chi chapter</small></h1>
+  </div>
+  <div class="container">
+  <div [hidden]="!error_flag" class="alert alert-danger">
+    <strong>Uh oh!</strong> Unable to retrieve leaders at this time, please try again later.
+  </div>
+  <div class="row">
+  <div *ngFor= "let leader of leaders" class="col-md-4 leader_block">
+      <img [src]="leader.image" class="img-circle" width="180" height="180"/>
+      <h2>{{leader.title}}</h2>
+      <p>{{leader.firstname}} {{leader.lastname}} - <a href="mailto:{{leader.email}}">{{leader.email}}</a></p>
+  </div>
+  </div>
+  </div>
 </div>

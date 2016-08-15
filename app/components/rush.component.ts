@@ -14,10 +14,25 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 export class RushComponent implements OnInit {
     title: string = "Rush";
     events: RushEvent[];
+    error_flag: boolean = false;
+    loaded: boolean = false;
 
     constructor(private rushEventService: RushEventService) { }
 
     ngOnInit() {
-        this.rushEventService.getEvents().then(events => this.events = events);
+        this.rushEventService.getEvents().subscribe(
+            events => this.set_events(events),
+            error => this.set_error()
+        )
+    }
+
+    private set_error() {
+        this.loaded = true;
+        this.error_flag = true;
+    }
+
+    private set_events(events : RushEvent[]) {
+        this.loaded = true;
+        this.events = events;
     }
 }

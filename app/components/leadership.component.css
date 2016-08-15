@@ -1,0 +1,9 @@
+.leader_block {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.leader_block p {
+  margin-right: 10px;
+  margin-left: 10px;
+}

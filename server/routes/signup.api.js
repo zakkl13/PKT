@@ -19,4 +19,4 @@ function process_signup(body) {
         console.log(body);
     });
 }
-//# sourceMappingURL=signupapi.js.map
+//# sourceMappingURL=signup.api.js.map

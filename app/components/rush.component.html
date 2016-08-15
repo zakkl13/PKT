@@ -6,12 +6,15 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <p style="text-align: center">
-      Looking to join a fraternity? Do you want to become a man of character and distinction?
+      Looking to join a fraternity? Do you want to become a man of character and distinction? Are you simply looking for something to do?
       Feel free to come to a rush event and meet the brothers of Phi Kappa Tau.
-      Join our Facebook <a href="#">group</a> for more information and updates. Any questions or concerns? Text or call
+      Join our Facebook <a href="facebook.com">group</a> for more information and updates. Any questions or concerns? Text or call
       Collin Choy at 410-555-5555
     </p>
   </div>
+</div>
+<div [hidden]="!error_flag" class="alert alert-danger">
+  <strong>Uh oh!</strong> Unable to retrieve rush events at this time, please try again later.
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2 container">
@@ -39,6 +42,6 @@
   </div>
 </div>
 <div class="row">
-  <div class=""><a [routerLink] = "['/list']"><button type="button" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span> &raquo;</button></a></div>
+  <div class=""><button type="button" [routerLink] = "['/list']" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span> &raquo;</button></div>
 </div>
 </div>
