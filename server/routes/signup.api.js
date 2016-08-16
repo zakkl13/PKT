@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const express_1 = require("express");
+const signupService = require("../services/signup.service");
 const signupApiRouter = express_1.Router();
 exports.signupApiRouter = signupApiRouter;
 signupApiRouter.post('/', function (req, res) {
@@ -16,7 +17,8 @@ signupApiRouter.post('/', function (req, res) {
 });
 function process_signup(body) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(body);
+        console.log(JSON.stringify(body));
+        signupService.newSignup(body);
     });
 }
 //# sourceMappingURL=signup.api.js.map
