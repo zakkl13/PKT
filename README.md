@@ -15,9 +15,18 @@ This project is powered by the Mongo, Express, Angular, NodeJS (MEAN) stack alon
 interface which then interacts with the REST API layer provided by Express to store and retrieve data. In the back-end, Express connects directly
 to the database layer provided by Mongo DB.Lastly, NodeJS provides provides the runtime environment for Express to run on.
 
-### Ideas
-* Put on A-Frames
-* Put on Rush shirts
+### Roadmap
+* Unit Tests!
+* Interface for modifying rush events
+* Interface for modifying leaders
+* Authentication for above interfaces
+
+
+### Marketing
+* Include URL on A-Frames around campus
+* Include URL on handouts
+* Have URL in email signatures
+* Use site for philanthropy purposes to drive traffic
 
 ### Credits
 Thanks to:
