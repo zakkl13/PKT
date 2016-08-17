@@ -36,7 +36,7 @@ node_modules
 public
 
 #Typescript generated files
-app/**/*.map
-app/**/*.js
+app/components/**/*.map
+app/components/**/*.js
 server/**/*.map
 server/**/*.js
