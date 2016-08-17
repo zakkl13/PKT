@@ -9,6 +9,7 @@ var concat = require('gulp-concat')
 
 // SERVER
 gulp.task('clean', function () {
+  del('built_server')
   return del('public')
 })
 
@@ -18,9 +19,8 @@ gulp.task('build:server', ['clean'], function () {
     .pipe(sourcemaps.init())
         .pipe(ts(tsProject))
   return tsResult.js
-        .pipe(concat('server.js'))
         .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('built_server'))
 })
 
 // CLIENT
@@ -86,7 +86,7 @@ gulp.task('build:css', ['clean'], function () {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('build', ['build:index', 'build:app'])
+gulp.task('build', ['build:server', 'build:index', 'build:app'])
 gulp.task('default', ['build'])
 
 gulp.task('test', ['build'], function () {

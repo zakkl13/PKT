@@ -2,7 +2,7 @@
   "name": "PKT",
   "version": "1.0.0",
   "description": "PKT Epsilon Chi Chapter",
-  "main": "server/index.js",
+  "main": "built_server/index.js",
   "engines": {
     "node": "6.0.0",
     "npm": "3.8.6"
