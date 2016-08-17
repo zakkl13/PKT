@@ -1,12 +1,13 @@
 // Source: [http://blog.edenmsg.com/angular2-typescript-gulp-and-expressjs/](http://blog.edenmsg.com/angular2-typescript-gulp-and-expressjs/)
 
 var gulp = require('gulp')
-var rename = require('gulp-rename');
+var rename = require('gulp-rename')
 var path = require('path')
 var sourcemaps = require('gulp-sourcemaps')
 var ts = require('gulp-typescript')
 var del = require('del')
 var concat = require('gulp-concat')
+var minify = require('gulp-minify')
 
 // SERVER
 gulp.task('clean', function () {
@@ -37,6 +38,13 @@ gulp.task('build:dependencies', ['clean'], function () {
 
   // Let's copy our head dependencies into a dist/libs
   var copyJsNPMDependencies = gulp.src(mappedPaths, {base: 'node_modules'})
+      .pipe(minify({
+          ext: {
+              src: '.js',
+              min: '.min.js'
+          },
+          ignoreFiles: ['.min.js']
+      }))
       .pipe(gulp.dest('public/libs'))
 
   return copyJsNPMDependencies;
@@ -91,6 +99,10 @@ gulp.task('build:frontend', ['clean'], function () {
 
   return gulp.src('app/**/*.css')
       .pipe(gulp.dest('public'))
+})
+
+gulp.task('deploy_prep', ['build:prod'], function() {
+    return del('node_modules');
 })
 
 gulp.task('build', ['build:server', 'build:dependencies', 'build:devdependencies', 'build:frontend', 'build:index', 'build:app'])

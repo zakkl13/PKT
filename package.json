@@ -11,8 +11,7 @@
     "start": "node built_server/index.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings",
-    "bundle": "node tools/builder.js"
+    "typings": "typings"
   },
   "keywords": [
     "angular",
@@ -54,12 +53,13 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
-    "typescript": "^1.8.10",
     "del": "2.2.0",
     "gulp": "3.9.1",
     "gulp-concat": "2.6.0",
+    "gulp-minify": "0.0.14",
     "gulp-sourcemaps": "1.6.0",
     "gulp-typescript": "2.13.6",
+    "typescript": "^1.8.10",
     "typings": "^0.8.1"
   }
 }
