@@ -37,7 +37,7 @@ public
 
 #Typescript generated files
 app/**/*.map
-app/**/*.js
+app/main.js
 app/components/**/*.map
 app/components/**/*.js
 server/**/*.map
