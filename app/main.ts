@@ -1,4 +1,4 @@
-/// <reference path="../typings/index.d.ts" />
+/// <reference path="../typings/index_es5.d.ts" />
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { Type, enableProdMode } from "@angular/core";
 import { HTTP_PROVIDERS } from "@angular/http";

@@ -21,10 +21,6 @@ const routes: RouterConfig = [
         component: <Type>LeadershipComponent
     },
     {
-        path: 'contact',
-        component: <Type>IndexComponent
-    },
-    {
         path: 'list',
         component: <Type>SignupComponent
     }
