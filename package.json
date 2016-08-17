@@ -8,10 +8,11 @@
     "npm": "3.8.6"
   },
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node built_server/index.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings"
+    "typings": "typings",
+    "bundle": "node tools/builder.js"
   },
   "keywords": [
     "angular",
@@ -39,6 +40,7 @@
     "es6-shim": "^0.35.0",
     "express": "^4.13.4",
     "express-validator": "^2.20.8",
+    "gulp-rename": "^1.2.2",
     "jsonwebtoken": "^7.1.7",
     "lodash": "^4.11.1",
     "mongodb": "^2.1.18",
@@ -47,6 +49,7 @@
     "rxjs": "5.0.0-beta.6",
     "serve-favicon": "^2.3.0",
     "systemjs": "0.19.27",
+    "systemjs-builder": "^0.15.26",
     "zone.js": "0.6.12"
   },
   "devDependencies": {

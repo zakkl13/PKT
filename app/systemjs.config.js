@@ -6,11 +6,10 @@
 
   // map tells the System loader where to look for things
   var map = {
-    'app':                        './', // 'dist',
+    'app':                        'public', // 'dist',
 
-    '@angular':                   'libs/@angular',
-    'rxjs':                       'libs/rxjs',
-    'moment':                     'libs/moment/moment.js'
+    '@angular':                   'node_modules/@angular',
+    'rxjs':                       'node_modules/rxjs'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
