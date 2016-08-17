@@ -97,6 +97,6 @@ gulp.task('build', ['build:server', 'build:dependencies', 'build:devdependencies
 gulp.task('build:prod', ['build:server', 'build:dependencies', 'build:frontend', 'build:indexprod', 'build:app'])
 gulp.task('default', ['build'])
 
-gulp.task('test', ['build'], function () {
+gulp.task('test', [], function () {
   return true
 })
