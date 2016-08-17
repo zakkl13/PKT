@@ -24,6 +24,7 @@ to the database layer provided by Mongo DB.Lastly, NodeJS provides provides the 
 * Interface for modifying rush events
 * Interface for modifying leaders
 * Authentication for above interfaces
+* Transition project to next fraternity webmaster
 
 
 ### Marketing
