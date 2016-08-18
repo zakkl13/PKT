@@ -20,6 +20,7 @@ to the database layer provided by Mongo DB. Lastly, NodeJS provides provides the
 ![software_diagram](http://i.imgur.com/uJkIBmE.png)
 
 **Deployment**
+
 To deploy the application, run the following commands:
 ```
 npm install
@@ -27,6 +28,7 @@ gulp build:prod
 node tools/builder.js
 gulp deploy_prep
 ```
+and to start, simply run `npm start`
 
 ### Roadmap
 * Unit Tests!
