@@ -25,8 +25,6 @@ To deploy the application, run the following commands:
 ```
 npm install
 gulp build:prod
-node tools/builder.js
-gulp deploy_prep
 ```
 and to start, simply run `npm start`
 

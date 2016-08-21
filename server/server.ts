@@ -9,20 +9,21 @@ import { signupApiRouter } from './routes/signup.api';
 import { RushEventRouter } from './routes/rush_event.api';
 import { LeadershipRouter } from './routes/leadership.api';
 
-
+var compression = require('compression');
 
 var app = express();
-app.use(favicon(path.join(__dirname, '../public/static/favicon.png')));
+app.use(favicon(path.join(__dirname, '../../public/static/favicon.png')));
 
 app.disable("x-powered-by");
 
 app.use(json());
+app.use(compression());
 app.use(urlencoded({ extended: true }));
 app.use("/health", healthRouter);
 app.use("/api/signup", signupApiRouter);
 app.use("/api/rushevents", RushEventRouter);
 app.use("/api/leaders", LeadershipRouter);
-app.use("/", express.static(path.join(__dirname, '../public')));
+app.use("/", express.static(path.join(__dirname, '../../public')));
 
 
 export { app }
