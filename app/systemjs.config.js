@@ -15,7 +15,7 @@
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'zonejs':                             { main: 'zone', defaultExtension: 'js' },
-    'reflect-metadata':                   { main: 'Reflect', defaultExtension: 'js' }
+  'reflect-metadata':                   { main: 'Reflect', defaultExtension: 'js' }
   };
 
   var ngPackageNames = [

@@ -29,7 +29,7 @@ var jsNPMDependencies = [
   'core-js/client/shim.min.js',
   'zone.js/dist/zone.js',
   'reflect-metadata/Reflect.js',
-  'systemjs/dist/system.js'
+  'systemjs/dist/system.src.js'
 ]
 
 gulp.task('bundle:vendor', ['clean'], function () {
@@ -96,7 +96,19 @@ gulp.task('deploy_prep', ['build:prod'], function() {
     return del('node_modules');
 })
 
-gulp.task('bundle:app', ['clean', 'build:app'], function () {
+gulp.task('copy:vendor', ['clean'], function () {
+    gulp.src(
+        'node_modules/@angular/**/*'
+    )
+    .pipe(gulp.dest('public/libs/@angular'))
+
+    gulp.src(
+        'node_modules/rxjs/bundles/Rx.js'
+    )
+    .pipe(gulp.dest('public/libs'))
+})
+
+gulp.task('bundle:app', ['clean', 'bundle:vendor', 'build:app'], function () {
   var builder = new SystemBuilder('./', 'app/systemjs.config.js');
   var outputFile = 'public/libs/app.js';
   return builder.buildStatic('app', outputFile);
