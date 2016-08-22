@@ -43,17 +43,6 @@ gulp.task('bundle:vendor', ['clean'], function () {
   return copyJsNPMDependencies;
 })
 
-gulp.task('copy:vendor', ['clean'], function () {
-    gulp.src([
-        'node_modules/rxjs/bundles/Rx.js',
-        'node_modules/@angular/**/*'
-    ])
-    .pipe(gulp.dest('public/libs/vendor'))
-
-    var copySysJsConfig = gulp.src('app/systemjs.config.js')
-      .pipe(gulp.dest('public'))
-})
-
 gulp.task('build:devdependencies', ['build:dependencies'], function () {
     var copyAngular = gulp.src(['node_modules/@angular/**/*'])
                     .pipe(gulp.dest('public/libs/@angular'))
@@ -109,21 +98,23 @@ gulp.task('deploy_prep', ['build:prod'], function() {
 
 gulp.task('bundle:app', ['clean', 'build:app'], function () {
   var builder = new SystemBuilder('./', 'app/systemjs.config.js');
-  var outputFile = 'app/app.js';
+  var outputFile = 'public/libs/app.js';
   return builder.buildStatic('app', outputFile);
 })
 
 gulp.task('bundle', ['bundle:vendor', 'bundle:app'], function () {
     var vendor_file = 'public/libs/vendor.js'
+    var app_file = 'public/libs/app.js'
     var packitup = gulp.src([
         vendor_file ,
-        'app/app.js'
+        app_file
         ])
     .pipe(concat('bundle.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('public/libs'));
 
     var remove_vendor_pack = del(vendor_file);
+    var remove_vendor_pack = del(app_file);
 });
 
 gulp.task('build', ['build:server', 'build:dependencies', 'build:devdependencies', 'build:frontend', 'build:index', 'build:app'])
