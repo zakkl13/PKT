@@ -110,7 +110,7 @@ gulp.task('bundle', ['bundle:vendor', 'bundle:app'], function () {
         app_file
         ])
     .pipe(concat('bundle.min.js'))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest('public/libs'));
 
     //var remove_vendor_pack = del(vendor_file);
