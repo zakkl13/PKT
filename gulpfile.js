@@ -8,6 +8,7 @@ var ts = require('gulp-typescript')
 var del = require('del')
 var concat = require('gulp-concat')
 var minify = require('gulp-minify')
+var exec = require('child_process').exec
 
 // SERVER
 gulp.task('clean', function () {
@@ -105,8 +106,15 @@ gulp.task('deploy_prep', ['build:prod'], function() {
     return del('node_modules');
 })
 
+gulp.task('build:libbundle', ['clean', 'build:app'], function () {
+  exec('node tools/builder.js', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+  });
+})
+
 gulp.task('build', ['build:server', 'build:dependencies', 'build:devdependencies', 'build:frontend', 'build:index', 'build:app'])
-gulp.task('build:prod', ['build:server', 'build:dependencies', 'build:frontend', 'build:indexprod', 'build:app'])
+gulp.task('build:prod', ['build:server', 'build:dependencies', 'build:frontend', 'build:indexprod', 'build:app', 'build:libbundle'])
 gulp.task('default', ['build'])
 
 gulp.task('test', [], function () {
