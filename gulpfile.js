@@ -113,8 +113,8 @@ gulp.task('bundle', ['bundle:vendor', 'bundle:app'], function () {
     .pipe(uglify())
     .pipe(gulp.dest('public/libs'));
 
-    var remove_vendor_pack = del(vendor_file);
-    var remove_vendor_pack = del(app_file);
+    //var remove_vendor_pack = del(vendor_file);
+    //var remove_app_pack = del(app_file);
 });
 
 gulp.task('build', ['build:server', 'build:dependencies', 'build:devdependencies', 'build:frontend', 'build:index', 'build:app'])
