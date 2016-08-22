@@ -81,6 +81,9 @@ gulp.task('build:indexprod', ['clean'], function () {
   var copyIndex = gulp.src('app/static/index.prod.html')
       .pipe(rename('index.html'))
       .pipe(gulp.dest('public'))
+
+  var copySysJsConfig = gulp.src('app/systemjs.config.js')
+      .pipe(gulp.dest('public'))
 })
 
 gulp.task('build:frontend', ['clean'], function () {
