@@ -15,22 +15,12 @@ Today, code is pushed into a development environment to be manually tested and v
 
 This project is powered by the Mongo, Express, Angular, NodeJS (MEAN) stack along with the typescript language. The Express server framework serves the Angular front-end client
 interface which then interacts with the REST API layer provided by Express to store and retrieve data. In the back-end, Express connects directly
-to the database layer provided by Mongo DB. Lastly, NodeJS provides provides the runtime environment for Express to run on.
+to the database layer provided by Mongo DB.Lastly, NodeJS provides provides the runtime environment for Express to run on.
 
 ![software_diagram](http://i.imgur.com/uJkIBmE.png)
 
-**Deployment**
-
-To deploy the application, run the following commands:
-```
-npm install
-gulp build:prod
-```
-and to start, simply run `npm start`
-
 ### Roadmap
 * Unit Tests!
-* Central Logging
 * Interface for modifying rush events
 * Interface for modifying leaders
 * Authentication for above interfaces

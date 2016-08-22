@@ -8,12 +8,10 @@ var ts = require('gulp-typescript')
 var del = require('del')
 var concat = require('gulp-concat')
 var minify = require('gulp-minify')
-var shell = require('gulp-shell')
-
 
 // SERVER
 gulp.task('clean', function () {
-  del('server/bin')
+  del('built_server')
   return del('public')
 })
 
@@ -24,7 +22,7 @@ gulp.task('build:server', ['clean'], function () {
         .pipe(ts(tsProject))
   return tsResult.js
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('server/bin'))
+        .pipe(gulp.dest('built_server'))
 })
 
 // CLIENT
@@ -107,12 +105,8 @@ gulp.task('deploy_prep', ['build:prod'], function() {
     return del('node_modules');
 })
 
-gulp.task('build:libs', ['clean', 'build:app'], shell.task([
-    'node tools/builder.js'
-]))
-
 gulp.task('build', ['build:server', 'build:dependencies', 'build:devdependencies', 'build:frontend', 'build:index', 'build:app'])
-gulp.task('build:prod', ['build:server', 'build:dependencies', 'build:frontend', 'build:indexprod', 'build:app', 'build:libs'])
+gulp.task('build:prod', ['build:server', 'build:dependencies', 'build:frontend', 'build:indexprod', 'build:app'])
 gulp.task('default', ['build'])
 
 gulp.task('test', [], function () {
