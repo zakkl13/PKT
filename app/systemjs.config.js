@@ -1,22 +1,21 @@
-/**
- * System configuration for Angular 2 samples
- * Adjust as necessary for your application needs.
- */
-(function(global) {
+
 
   // map tells the System loader where to look for things
   var map = {
     'app':                        'public', // 'dist',
 
     '@angular':                   'node_modules/@angular',
-    'rxjs':                       'node_modules/rxjs'
+    'rxjs':                       'node_modules/rxjs',
+    'zonejs':                             'node_modules/zone.js',
+    'reflect-metadata':                   'node_modules/reflect-metadata'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
-    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+    'zonejs':                             { main: 'zone', defaultExtension: 'js' },
+    'reflect-metadata':                   { main: 'Reflect', defaultExtension: 'js' }
   };
 
   var ngPackageNames = [
@@ -58,4 +57,3 @@
 
   System.config(config);
 
-})(this);

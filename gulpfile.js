@@ -1,5 +1,3 @@
-// Source: [http://blog.edenmsg.com/angular2-typescript-gulp-and-expressjs/](http://blog.edenmsg.com/angular2-typescript-gulp-and-expressjs/)
-
 var gulp = require('gulp')
 var rename = require('gulp-rename')
 var path = require('path')
@@ -7,7 +5,7 @@ var sourcemaps = require('gulp-sourcemaps')
 var ts = require('gulp-typescript')
 var del = require('del')
 var concat = require('gulp-concat')
-var minify = require('gulp-minify')
+var uglify = require('gulp-uglify')
 var SystemBuilder = require('systemjs-builder')
 
 // SERVER
@@ -31,24 +29,29 @@ var jsNPMDependencies = [
   'core-js/client/shim.min.js',
   'zone.js/dist/zone.js',
   'reflect-metadata/Reflect.js',
-  'systemjs/dist/system.src.js'
+  'systemjs/dist/system.js'
 ]
 
-gulp.task('build:dependencies', ['clean'], function () {
+gulp.task('bundle:vendor', ['clean'], function () {
   var mappedPaths = jsNPMDependencies.map(file => { return path.resolve('node_modules', file) })
 
   // Let's copy our head dependencies into a dist/libs
   var copyJsNPMDependencies = gulp.src(mappedPaths, {base: 'node_modules'})
-      .pipe(minify({
-          ext: {
-              src: '.js',
-              min: '.min.js'
-          },
-          ignoreFiles: ['.min.js']
-      }))
+        .pipe(concat('vendor.js'))
       .pipe(gulp.dest('public/libs'))
 
   return copyJsNPMDependencies;
+})
+
+gulp.task('copy:vendor', ['clean'], function () {
+    gulp.src([
+        'node_modules/rxjs/bundles/Rx.js',
+        'node_modules/@angular/**/*'
+    ])
+    .pipe(gulp.dest('public/libs/vendor'))
+
+    var copySysJsConfig = gulp.src('app/systemjs.config.js')
+      .pipe(gulp.dest('public'))
 })
 
 gulp.task('build:devdependencies', ['build:dependencies'], function () {
@@ -81,14 +84,9 @@ gulp.task('build:indexprod', ['clean'], function () {
   var copyIndex = gulp.src('app/static/index.prod.html')
       .pipe(rename('index.html'))
       .pipe(gulp.dest('public'))
-
-  var copySysJsConfig = gulp.src('app/systemjs.config.js')
-      .pipe(gulp.dest('public'))
 })
 
-gulp.task('build:frontend', ['clean'], function () {
-
-
+gulp.task('build:frontend', ['clean', 'build:app'], function () {
   var copyCss = gulp.src('app/static/styles.css')
     .pipe(gulp.dest('public'))
 
@@ -109,19 +107,27 @@ gulp.task('deploy_prep', ['build:prod'], function() {
     return del('node_modules');
 })
 
-gulp.task('build:libbundle', ['clean', 'build:app'], function () {
+gulp.task('bundle:app', ['clean', 'build:app'], function () {
   var builder = new SystemBuilder('./', 'app/systemjs.config.js');
-  var outputFile = 'public/libs/bundle.min.js';
-  return builder.buildStatic('app', outputFile, {
-            minify: true,
-            mangle: true,
-            rollup: true
-    });
-
+  var outputFile = 'app/app.js';
+  return builder.buildStatic('app', outputFile);
 })
 
+gulp.task('bundle', ['bundle:vendor', 'bundle:app'], function () {
+    var vendor_file = 'public/libs/vendor.js'
+    var packitup = gulp.src([
+        vendor_file ,
+        'app/app.js'
+        ])
+    .pipe(concat('bundle.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('public/libs'));
+
+    var remove_vendor_pack = del(vendor_file);
+});
+
 gulp.task('build', ['build:server', 'build:dependencies', 'build:devdependencies', 'build:frontend', 'build:index', 'build:app'])
-gulp.task('build:prod', ['build:server', 'build:dependencies', 'build:frontend', 'build:indexprod', 'build:app', 'build:libbundle'])
+gulp.task('build:prod', ['build:server', 'build:frontend', 'build:indexprod', 'bundle'])
 gulp.task('default', ['build'])
 
 gulp.task('test', [], function () {
