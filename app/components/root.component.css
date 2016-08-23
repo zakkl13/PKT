@@ -36,11 +36,17 @@ h1 {
 
 .foot_bar {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .foot_bar a {
   padding-left: 10px;
   padding-right: 10px;
+  color: rgb(172, 26, 47);
+}
+
+.foot_bar a a:visited {
+  color: #000;
 }
 
 

@@ -5,4 +5,5 @@ export class RushEvent {
   body: string;
   time_of_day: string;
   priority: number;
+  location: string;
 }
