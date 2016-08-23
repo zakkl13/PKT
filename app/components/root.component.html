@@ -1,5 +1,6 @@
 <header>
-      <nav class="navbar navbar-inverse navbar-static-top">
+    <!--<div class="container">-->
+      <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -8,9 +9,10 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <!--<a class="navbar-brand" href="#">
               {{title}}
-              </a>
+              </a>-->
+            <img class="navbar-brand" src = 'static/pkt-wordmark.png' />
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav centered">
@@ -23,6 +25,7 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+    <!--</div>-->
 </header>
 
 <router-outlet></router-outlet>
@@ -30,11 +33,12 @@
 <hr />
 
 <footer>
-  <div class="container" id="foot_bar">
-    <a href="http://phikappatau.org" target="_blank"><img src="./static/pkt-logo.png" height="40px" class="foot_logo"/></a>
-    <p class="text-muted pull-right"><a href="https://www.facebook.com/VT-Phi-Kappa-Tau-356927551003931" target="_blank">Facebook</a> |
-                          <a href="https://twitter.com/vtphikappatau" target="_blank">Twitter</a>  |
+  <div class="container" class="foot_bar">
+    <!--<a href="http://phikappatau.org" target="_blank"><img src="./static/pkt-logo.png" height="40px" class="foot_logo"/></a>-->
+    <p class="text-muted">
+                          <a href="https://twitter.com/vtphikappatau" target="_blank">Twitter</a> |
                           <a href="http://vtifc.org" target="_blank">Virginia Tech IFC</a> |
+                          <a href="https://www.facebook.com/VT-Phi-Kappa-Tau-356927551003931" target="_blank">PKT National Organization</a> |
                           <a href="https://github.com/zakkl13/PKT" target="_blank">Source Code</a> </p>
   </div>
 </footer>

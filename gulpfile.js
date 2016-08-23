@@ -95,6 +95,17 @@ gulp.task('build:frontend', ['clean', 'build:app'], function () {
       .pipe(gulp.dest('public'))
 })
 
+gulp.task('dev:frontend', function () {
+    var copyCss = gulp.src('app/static/styles.css')
+    .pipe(gulp.dest('public'))
+
+  var copyTemplates = gulp.src('app/**/*.html')
+      .pipe(gulp.dest('public'))
+
+    return gulp.src('app/**/*.css')
+      .pipe(gulp.dest('public'))
+})
+
 gulp.task('deploy_prep', ['build:prod'], function() {
     return del('node_modules');
 })
