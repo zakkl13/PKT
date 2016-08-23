@@ -3,4 +3,6 @@ export class RushEvent {
   title: string;
   img: string;
   body: string;
+  time_of_day: string;
+  priority: number;
 }

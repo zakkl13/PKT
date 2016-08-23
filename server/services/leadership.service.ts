@@ -5,7 +5,7 @@ export function getLeaders() {
   return new Promise(function(resolve, reject) {
     database.connect().then(function(db: mongodb.Db) {
         var leaders = [];
-        db.collection("leaders").find({}).forEach(function (result) {
+        db.collection("leaders").find({active: true}).forEach(function (result) {
           if (result) leaders.push(result);
         }, function() {
           resolve(leaders);

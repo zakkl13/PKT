@@ -1,10 +1,9 @@
 import mongodb = require('mongodb')
 import * as database from '../database';
-import { User } from '../models/user';
 
 const userCollection: string = "users";
 
-export async function save(user: User) {
+export async function save(user: String) {
     database.connect().then(function(db: mongodb.Db) {
       db.collection(userCollection, function(err, coll) {
         if (err) console.log(err);

@@ -1,6 +1,5 @@
 import { Router, Response, Request } from "express";
 var bcrypt = require("bcryptjs");
-import { User } from '../models/user';
 import * as userService from '../services/user.service';
 
 const UserApiRouter : Router = Router();
@@ -33,11 +32,11 @@ function validate_create(req: Request) {
 }
 
 async function create_user(body) {
-  var user = new User(body.username, body.email);
+  //var user = new string(body.username, body.email);
   bcrypt.genSalt(saltRounds, function(err, salt) {
     bcrypt.hash(body.password, salt, function(err, hash) {
-        user.set_pass(hash);
-        userService.save(user);
+        //user.set_pass(hash);
+        //userService.save(user);
     });
   });
 
