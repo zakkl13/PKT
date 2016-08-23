@@ -88,6 +88,9 @@ gulp.task('build:frontend', ['clean', 'build:app'], function () {
   var copyPng = gulp.src('app/static/*.png')
       .pipe(gulp.dest('public/static'))
 
+  var copyGifs = gulp.src('app/static/*.gif')
+      .pipe(gulp.dest('public/static'))
+
   return gulp.src('app/**/*.css')
       .pipe(gulp.dest('public'))
 })
