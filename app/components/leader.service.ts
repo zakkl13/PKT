@@ -7,7 +7,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 import { Leader } from './leader';
-import { LEADERS } from './static-leaders'
 
 @Injectable()
 export class LeaderService {

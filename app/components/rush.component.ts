@@ -32,9 +32,6 @@ export class RushComponent implements OnInit {
     }
 
     private set_events(evnts : RushEvent[]) {
-        evnts.sort(function (a, b) {
-            return a.priority - b.priority
-        });
         this.loaded = true;
         this.events = evnts;
     }

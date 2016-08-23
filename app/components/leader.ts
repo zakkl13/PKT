@@ -1,5 +1,4 @@
 export class Leader {
-  priority: number;
   title: string;
   firstname: string;
   lastname: string;

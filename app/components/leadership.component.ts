@@ -17,15 +17,12 @@ export class LeadershipComponent implements OnInit {
 
     ngOnInit() {
         this.leaderService.getLeaders().subscribe(
-            leaders => this.sort_n_set(leaders),
+            leaders => this.set_leaders(leaders),
             error => this.error_flag = true
         );
     }
 
-    private sort_n_set(ldrs) {
-        ldrs.sort(function (a, b) {
-            return a.priority - b.priority
-        });
+    private set_leaders(ldrs) {
         this.leaders = ldrs;
     }
 }
