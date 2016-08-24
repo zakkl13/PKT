@@ -3,7 +3,10 @@
     <h1>Executive Board <small>Leaders of the PKT Epsilon Chi chapter</small></h1>
   </div>
   <div class="container">
-  <div [hidden]="!error_flag" class="alert alert-danger">
+    <div *ngIf="!loaded">
+      <link rel="stylesheet" type="text/css" href="../static/ring.css">
+      <div class='uil-ring-css' style='transform:scale(0.5);'><div></div></div>    </div>
+  <div *ngIf="error_flag" class="alert alert-danger">
     <strong>Uh oh!</strong> Unable to retrieve leaders at this time, please try again later.
   </div>
   <div class="row">

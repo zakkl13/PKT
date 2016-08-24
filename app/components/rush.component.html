@@ -18,8 +18,12 @@
   <div class="page-header text-center">
   <h1> 2016 Fall Rush Schedule</h1>
 </div>
-<div [hidden]="!error_flag" class="alert alert-danger">
+<div *ngIf="error_flag" class="alert alert-danger">
   <strong>Uh oh!</strong> Unable to retrieve rush events at this time, please try again later.
+</div>
+<div *ngIf="!loaded" class="center-block">
+<link rel="stylesheet" type="text/css" href="../static/ring.css">
+      <div class='uil-ring-css' style='transform:scale(0.5);'><div></div></div>
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2 container">

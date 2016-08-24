@@ -102,6 +102,19 @@ gulp.task('dev:frontend', function () {
   var copyTemplates = gulp.src('app/**/*.html')
       .pipe(gulp.dest('public'))
 
+  var copyJpg = gulp.src('app/static/*.jpg')
+      .pipe(gulp.dest('public/static'))
+
+  var copyPng = gulp.src('app/static/*.png')
+      .pipe(gulp.dest('public/static'))
+
+  var copyGifs = gulp.src('app/static/*.gif')
+      .pipe(gulp.dest('public/static'))
+
+  var copyIndex = gulp.src('app/static/index.prod.html')
+      .pipe(rename('index.html'))
+      .pipe(gulp.dest('public'))
+
     return gulp.src('app/**/*.css')
       .pipe(gulp.dest('public'))
 })

@@ -6,6 +6,7 @@ import { RushEvent } from './rush_event';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class RushEventService {
@@ -21,6 +22,7 @@ export class RushEventService {
 
   getEvents() : Observable<RushEvent[]> {
     return this.http.get(this.rusheventUrl)
+                    .delay(7000)
                     .map(res => res.json() as RushEvent[])
                     .catch(this.handleError);
   }
