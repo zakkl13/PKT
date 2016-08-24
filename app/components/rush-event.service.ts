@@ -22,7 +22,6 @@ export class RushEventService {
 
   getEvents() : Observable<RushEvent[]> {
     return this.http.get(this.rusheventUrl)
-                    .delay(7000)
                     .map(res => res.json() as RushEvent[])
                     .catch(this.handleError);
   }

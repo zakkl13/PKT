@@ -24,7 +24,6 @@ export class LeaderService {
 
   getLeaders() : Observable<Leader[]> {
     return this.http.get(this.rusheventUrl)
-                .delay(5000)
                 .map(res => res.json() as Leader[])
                 .catch(this.handleError);
   }
