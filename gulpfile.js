@@ -119,10 +119,6 @@ gulp.task('dev:frontend', function () {
       .pipe(gulp.dest('public'))
 })
 
-gulp.task('deploy_prep', ['build:prod'], function() {
-    return del('node_modules');
-})
-
 gulp.task('copy:vendor', ['clean'], function () {
     gulp.src(
         'node_modules/@angular/**/*'

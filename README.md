@@ -19,8 +19,45 @@ to the database layer provided by Mongo DB.Lastly, NodeJS provides provides the 
 
 ![software_diagram](http://i.imgur.com/uJkIBmE.png)
 
+**Deployment**
+
+To deploy the application simply run the following:
+```
+npm install
+gulp build:prod
+```
+
+and to run: `npm start`
+
+Gulp is a tool which runs user defined tasks. I am using Gulp to take my development files and build up an application,
+ready to be deployed to a physical server where it will be accesible to the internet. The task `gulp build:prod`
+does the following:
+* Compiles the Typescript files in the `server` directory to javascript files in the `built_server` directory
+* Creates a `public` directory, compiles Typescript files in the `app` directory to javascript
+and copies them to `public` along with all "static" files such as images, html files, and css files.
+* Finally the task bundles all of the Angular libraries and dependencies into a single javascript file `bundle.min.js`
+which serves the client-side application
+
+**Development**
+
+To setup your development environment you will need to do the following:
+* Install [NodeJS](https://nodejs.org)
+* Install the necessary tools: `npm install -g typescript gulp typings`
+* Clone this repository to a folder, the following commands are run in the top level directory of this project
+* Install npm packages `npm install`
+* Install typescript packages `typings install`
+* Setup a local [Mongo](https://www.mongodb.com/) instance at `localhost:27017`
+* Add a Mongo database named pktDB, populate `events` and `leaders` collections with seed data
+
+You are now ready to develop, make changes then run `gulp build:prod` (alternate build for development is being... developed) and run
+`npm start` and you should see the application running at `localhost:3000`. While the app is running you may use convenience tasks
+such as `gulp dev:frontend` which re-copies all .html, .css, and image files into the public folder without requiring a build or application restart.
+
 ### Roadmap
-* Unit Tests!
+* Test Test Test
+* Central logging
+* JSON schemas and validation for REST API
+* Use AWS API gateway for better control and safety with REST API
 * Interface for modifying rush events
 * Interface for modifying leaders
 * Authentication for above interfaces
@@ -32,6 +69,7 @@ to the database layer provided by Mongo DB.Lastly, NodeJS provides provides the 
 * Include URL on handouts
 * Have URL in email signatures
 * Use site for philanthropy purposes to drive traffic
+* vtPKT.com stickers
 
 ### Credits
 Thanks to:
