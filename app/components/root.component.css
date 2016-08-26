@@ -45,6 +45,15 @@ h1 {
   color: rgb(172, 26, 47);
 }
 
+@media screen and (max-width: 460px) {
+  .foot_bar a {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: rgb(172, 26, 47);
+    display: block;
+  }
+}
+
 .foot_bar a a:visited {
   color: #000;
 }
