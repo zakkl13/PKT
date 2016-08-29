@@ -65,6 +65,7 @@ Sample Event Object
 
 Sample Leader Object
 ```javascript
+{
     "priority" : 2,
     "title" : "Treasurer",
     "firstname" : "Zakk",
@@ -72,6 +73,7 @@ Sample Leader Object
     "email" : "zakkl13@vt.edu",
     "image" : "https://s3.amazonaws.com/pkt-images/zakk.jpg",
     "active" : true
+}
 ```
 Note: in the above examples, the `priority` property determines the order of the events (0 is first), and the active switch
 can be used to toggle whether the object is returned by the API or not.
