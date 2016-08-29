@@ -16,10 +16,10 @@ const routes: RouterConfig = [
         path: '',
         component: <Type>IndexComponent,
     },
-    // {
-    //     path: 'leadership',
-    //     component: <Type>LeadershipComponent
-    // },
+    {
+        path: 'leadership',
+        component: <Type>LeadershipComponent
+    },
     {
         path: 'list',
         component: <Type>SignupComponent
