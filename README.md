@@ -49,6 +49,33 @@ To setup your development environment you will need to do the following:
 * Setup a local [Mongo](https://www.mongodb.com/) instance at `localhost:27017`
 * Add a Mongo database named pktDB, populate `events` and `leaders` collections with seed data
 
+Sample Event Object
+```javascript
+{
+    "day" : "Monday, September 5th",
+    "title" : "Cookout at Oak Lane",
+    "img" : "https://s3.amazonaws.com/pkt-images/campus.jpg",
+    "body" : "Grilling at Phi Tau house. Bring your friends, your dog, and your parents! Come eat the free food.",
+    "time_of_day" : "4-6pm",
+    "active" : true,
+    "location" : "Phi Kappa Tau House @ Oak Lane. 77B Oak Lane.",
+    "priority" : 0
+}
+```
+
+Sample Leader Object
+```javascript
+    "priority" : 2,
+    "title" : "Treasurer",
+    "firstname" : "Zakk",
+    "lastname" : "Lefkowits",
+    "email" : "zakkl13@vt.edu",
+    "image" : "https://s3.amazonaws.com/pkt-images/zakk.jpg",
+    "active" : true
+```
+Note: in the above examples, the `priority` property determines the order of the events (0 is first), and the active switch
+can be used to toggle whether the object is returned by the API or not.
+
 You are now ready to develop, make changes then run `gulp build:prod` (alternate build for development is being... developed) and run
 `npm start` and you should see the application running at `localhost:3000`. While the app is running you may use convenience tasks
 such as `gulp dev:frontend` which re-copies all .html, .css, and image files into the public folder without requiring a build or application restart.
