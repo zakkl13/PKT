@@ -5,8 +5,8 @@
 ### Technology Overview
 **Infrastructure & Workflow**
 
-Amazon Web Services (AWS) provides the infrastructure for a scalable cloud application. Github and CodeShip.io provides continuous integration into the AWS Elastic Beanstalk service, this
-CI/CD (continuous integration - continuous deployment) pipeline allows for the latest version of code to be automatically tested and pushed into production in real time.
+Amazon Web Services (AWS) provides the infrastructure for a scalable cloud application. Github and CodeShip.io provide continuous integration into the AWS Elastic Beanstalk service, this
+CI/CD (continuous integration/continuous deployment) pipeline allows for the latest version of code to be automatically tested and pushed into production in real time.
 Today, code is pushed into a development environment to be manually tested and verified and then deployed to the production environment in Elastic Beanstalk.
 
 ![workflow_diagram](http://i.imgur.com/iqzI38i.png)
