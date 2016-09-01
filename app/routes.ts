@@ -6,6 +6,7 @@ import { IndexComponent } from './components/index.component';
 import { RushComponent } from './components/rush.component';
 import { LeadershipComponent } from './components/leadership.component';
 import { SignupComponent } from './components/signup.component';
+import { PhilanthropyComponent } from './components/philanthropy.component';
 
 const routes: RouterConfig = [
     {
@@ -23,6 +24,10 @@ const routes: RouterConfig = [
     {
         path: 'list',
         component: <Type>SignupComponent
+    },
+    {
+        path: 'philanthropy',
+        component: <Type>PhilanthropyComponent
     }
 ];
 
