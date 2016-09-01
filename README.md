@@ -1,21 +1,35 @@
-# Phi Kappa Tau Chapter Website
+# VT Phi Kappa Tau Website
 
 [ ![Codeship Status for zakkl13/PKT](https://codeship.com/projects/5a383150-303c-0134-d38e-7603af744759/status?branch=master)](https://codeship.com/projects/164142)
+
+### Upcoming Features
+* Phitauberfest (PKT annual fall philanthropy event) information page
+* Alumni section
+ * Alumni updated-contact-information collection
+ * Contact to current VP of Alumni Relations
+ * Donation collection
+ * Full VT PKT alumni directory
+
+### Marketing
+* Include URL on A-Frames around campus
+* Include URL on paper handouts and business cards
+* Have URL in email signatures
+* Use site for philanthropy purposes to drive traffic
+* vtPKT.com stickers
+* Facebook advertisments
 
 ### Technology Overview
 **Infrastructure & Workflow**
 
 Amazon Web Services (AWS) provides the infrastructure for a scalable cloud application. Github and CodeShip.io provide continuous integration into the AWS Elastic Beanstalk service, this
-CI/CD (continuous integration/continuous deployment) pipeline allows for the latest version of code to be automatically tested and pushed into production in real time.
+CI/CD (continuous integration/continuous deployment) pipeline allows for the latest version of code to be automatically tested and deployed to the cloud in real time.
 Today, code is pushed into a development environment to be manually tested and verified and then deployed to the production environment in Elastic Beanstalk.
 
 ![workflow_diagram](http://i.imgur.com/iqzI38i.png)
 
 **Software**
 
-This project is powered by the Mongo, Express, Angular, NodeJS (MEAN) stack along with the typescript language. The Express server framework serves the Angular front-end client
-interface which then interacts with the REST API layer provided by Express to store and retrieve data. In the back-end, Express connects directly
-to the database layer provided by Mongo DB. Lastly, NodeJS provides provides the runtime environment for Express to run on.
+This project is powered by the [Mongo](https://www.mongodb.com/), [Express](https://expressjs.com/), [Angular](https://angular.io/), [NodeJS](https://nodejs.org) (MEAN) stack along with the [TypeScript](https://www.typescriptlang.org/) language. The Express server framework serves the Angular front-end client interface which then interacts with the REST API layer provided by Express to store and retrieve data. In the back-end, Express connects directly to the database layer provided by Mongo DB. Lastly, NodeJS provides provides the runtime environment for Express to run on.
 
 ![software_diagram](http://i.imgur.com/uJkIBmE.png)
 
@@ -89,19 +103,6 @@ such as `gulp dev:frontend` which re-copies all .html, .css, and image files int
 * Use AWS API gateway for better control and safety with REST API
 * Interfaces for modifying data and corresponding PUT routes (requires API authentication)
 * Transition project to next fraternity webmaster
-
-### Planned Features
-* Leaders detail view
-* Phitauberfest philanthropy information (and possibly more) page
-* Alumni section - including alumni updated-contact-information collection, contact to current VP of Alumni Relations, donation collection
-* VT PKT Alumni directory, - likely accesible to members only
-
-### Marketing
-* Include URL on A-Frames around campus
-* Include URL on handouts
-* Have URL in email signatures
-* Use site for philanthropy purposes to drive traffic
-* vtPKT.com stickers
 
 ### Credits
 Thanks to:
