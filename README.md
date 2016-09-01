@@ -1,6 +1,22 @@
-# Phi Kappa Tau Chapter Website
+# VT Phi Kappa Tau Website
 
 [ ![Codeship Status for zakkl13/PKT](https://codeship.com/projects/5a383150-303c-0134-d38e-7603af744759/status?branch=master)](https://codeship.com/projects/164142)
+
+### Upcoming Features
+* Phitauberfest (PKT annual fall philanthropy event) information page
+* Alumni section
+ * Alumni updated-contact-information collection
+ * Contact to current VP of Alumni Relations
+ * Donation collection
+ * Full VT PKT alumni directory
+
+### Marketing
+* Include URL on A-Frames around campus
+* Include URL on paper handouts and business cards
+* Have URL in email signatures
+* Use site for philanthropy purposes to drive traffic
+* vtPKT.com stickers
+* Facebook advertisments
 
 ### Technology Overview
 **Infrastructure & Workflow**
@@ -87,19 +103,6 @@ such as `gulp dev:frontend` which re-copies all .html, .css, and image files int
 * Use AWS API gateway for better control and safety with REST API
 * Interfaces for modifying data and corresponding PUT routes (requires API authentication)
 * Transition project to next fraternity webmaster
-
-### Planned Features
-* Leaders detail view
-* Phitauberfest philanthropy information (and possibly more) page
-* Alumni section - including alumni updated-contact-information collection, contact to current VP of Alumni Relations, donation collection
-* VT PKT Alumni directory, - likely accesible to members only
-
-### Marketing
-* Include URL on A-Frames around campus
-* Include URL on handouts
-* Have URL in email signatures
-* Use site for philanthropy purposes to drive traffic
-* vtPKT.com stickers
 
 ### Credits
 Thanks to:
