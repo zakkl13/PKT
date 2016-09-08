@@ -12,6 +12,7 @@ import 'rxjs/add/operator/delay';
 export class RushEventService {
   constructor (private http: Http) {};
   private rusheventUrl: string = "api/rushevents";
+  private rushEvents: RushEvent[] = null;
 
   private handleError(error: any) {
     let errMsg = (error.message) ? error.message :
@@ -21,8 +22,16 @@ export class RushEventService {
   }
 
   getEvents() : Observable<RushEvent[]> {
-    return this.http.get(this.rusheventUrl)
+    if (this.rushEvents == null) {
+      return this.http.get(this.rusheventUrl)
                     .map(res => res.json() as RushEvent[])
                     .catch(this.handleError);
+    } else {
+      return Observable.create(function (observer) {
+        observer.onNext(this.rushEvents);
+        observer.onCompleted();
+      })
+    }
+
   }
 }

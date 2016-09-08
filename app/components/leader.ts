@@ -4,4 +4,5 @@ export class Leader {
   lastname: string;
   email: string;
   image: string;
+  id: string;
 }

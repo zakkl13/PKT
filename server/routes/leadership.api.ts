@@ -25,7 +25,20 @@ LeadershipRouter.get('/', function (req, res: Response) {
   })
   }
 
+});
 
+LeadershipRouter.get('/:leader_id', function(req, res) {
+  LeadershipService.getLeader(req.params.leader_id).then(function(result) {
+    if (!result[0]) {
+      res.status(404).send('Leader:' + req.params.leader_id + 'not found')
+    } else {
+      res.send(result[0]);
+    }
+  })
+  .catch(function(err) {
+    console.log(err);
+    res.status(500).send("Unable to retrieve leader at this time.");
+  })
 });
 
 

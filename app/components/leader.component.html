@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="!loaded">
+    <link rel="stylesheet" type="text/css" href="../static/ring.css">
+    <div class='uil-ring-css' style='transform:scale(0.5);'><div></div></div>
+  </div>
+  <div *ngIf="loaded">
+      <img [src]="leader.image" class="img-circle" width="180" height="180"/>
+      <h2>{{leader.title}}</h2>
+      <p>{{leader.firstname}} {{leader.lastname}} - <a href="mailto:{{leader.email}}">{{leader.email}}</a></p>
+  </div>
+</div>

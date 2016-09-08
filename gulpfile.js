@@ -95,30 +95,6 @@ gulp.task('build:frontend', ['clean', 'build:app'], function () {
       .pipe(gulp.dest('public'))
 })
 
-gulp.task('dev:frontend', function () {
-    var copyCss = gulp.src('app/static/styles.css')
-    .pipe(gulp.dest('public'))
-
-  var copyTemplates = gulp.src('app/**/*.html')
-      .pipe(gulp.dest('public'))
-
-  var copyJpg = gulp.src('app/static/*.jpg')
-      .pipe(gulp.dest('public/static'))
-
-  var copyPng = gulp.src('app/static/*.png')
-      .pipe(gulp.dest('public/static'))
-
-  var copyGifs = gulp.src('app/static/*.gif')
-      .pipe(gulp.dest('public/static'))
-
-  var copyIndex = gulp.src('app/static/index.prod.html')
-      .pipe(rename('index.html'))
-      .pipe(gulp.dest('public'))
-
-    return gulp.src('app/**/*.css')
-      .pipe(gulp.dest('public'))
-})
-
 gulp.task('copy:vendor', ['clean'], function () {
     gulp.src(
         'node_modules/@angular/**/*'
@@ -155,6 +131,40 @@ gulp.task('bundle', ['bundle:vendor', 'bundle:app'], function () {
 gulp.task('build', ['build:server', 'build:dependencies', 'build:devdependencies', 'build:frontend', 'build:index', 'build:app'])
 gulp.task('build:prod', ['build:server', 'build:frontend', 'build:indexprod', 'bundle'])
 gulp.task('default', ['build'])
+
+gulp.task('dev:frontend', function () {
+    var copyCss = gulp.src('app/static/styles.css')
+    .pipe(gulp.dest('public'))
+
+  var copyTemplates = gulp.src('app/**/*.html')
+      .pipe(gulp.dest('public'))
+
+  var copyJpg = gulp.src('app/static/*.jpg')
+      .pipe(gulp.dest('public/static'))
+
+  var copyPng = gulp.src('app/static/*.png')
+      .pipe(gulp.dest('public/static'))
+
+  var copyGifs = gulp.src('app/static/*.gif')
+      .pipe(gulp.dest('public/static'))
+
+  var copyIndex = gulp.src('app/static/index.prod.html')
+      .pipe(rename('index.html'))
+      .pipe(gulp.dest('public'))
+
+    return gulp.src('app/**/*.css')
+      .pipe(gulp.dest('public'))
+});
+
+gulp.task('dev:ts', function() {
+  var tsProject = ts.createProject('app/tsconfig.json')
+  var tsResult = gulp.src('app/**/*.ts')
+    .pipe(sourcemaps.init())
+    .pipe(ts(tsProject))
+  return tsResult.js
+    .pipe(sourcemaps.write())
+	.pipe(gulp.dest('public'))
+})
 
 gulp.task('test', [], function () {
   return true

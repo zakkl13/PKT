@@ -16,3 +16,15 @@ export function getLeaders() {
       })
   });
 }
+
+export function getLeader(leaderId: string) {
+  return new Promise(function(resolve, reject) {
+    database.connect().then(function(db: mongodb.Db) {
+      var single_leader_array = db.collection("leaders").find({active: true, id: leaderId}).limit(1).toArray();
+      resolve(single_leader_array);
+    })
+    .catch(function(err) {
+      reject(err);
+    })
+  })
+}

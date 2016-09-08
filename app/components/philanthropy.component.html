@@ -1,1 +1,41 @@
-<center>{{title}}</center>
+<div class="container">
+  <img src="https://s3.amazonaws.com/pkt-images/PhitauberfestLogoTrans.png" class="img-responsive center-block" />
+  <div class="text-center">
+    <h3>Friday, October 7th 4-6pm</h3>
+  </div>
+  <br />
+  <p class="text-center">Brought to you by:</p>
+  <div class="row">
+    <div class="col-md-4">
+      <a href="http://www.phikappatau.org" target="_blank"><img src="https://s3.amazonaws.com/pkt-images/PKTLogoTrans.png" style="max-height: 120px" class="img-responsive center-block" /></a>
+    </div>
+    <div class="col-md-4">
+      <a href="https://www.seriousfunnetwork.org/" target="_blank"><img src="https://s3.amazonaws.com/pkt-images/SeriousFunLogoTrans.png" style="max-height: 120px" class="img-responsive center-block" /></a>
+    </div>
+    <div class="col-md-4">
+      <a href="http://www.wickedtaco.com/blacksburg/" target="_blank"><img src="https://s3.amazonaws.com/pkt-images/WickedTacoLogoTrans.png" style="max-height: 120px" class="img-responsive center-block" /></a>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+  <div *ngFor="let panel of panels" class="col-md-8 col-md-offset-2">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title text-center">
+        {{panel[0]}}
+      </h3>
+    </div>
+    <div class="panel-body text-center">
+      <p>
+        {{panel[1]}}
+      </p>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="text-center">
+    <h1>Interested in participating?</h1>
+    <h3>Get in touch with our <a (click)="togglePhilChair()">Philanthropy Chair</a></h3>
+    <leader *ngIf="chair_loaded" [leader_id]="'philanthropy'"></leader>
+  </div>
+</div>
