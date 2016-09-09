@@ -1,4 +1,4 @@
-import { provideRouter, RouterConfig, RouterModule, ExtraOptions } from '@angular/router';
+import { provideRouter, RouterConfig, RouterModule} from '@angular/router';
 
 import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 
@@ -30,8 +30,6 @@ const routes_config: RouterConfig = [
         component: PhilanthropyComponent
     }
 ];
-
-var options: ExtraOptions = {useHash: true};
 
 export const router = RouterModule.forRoot(routes_config);
 
