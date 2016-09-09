@@ -8,14 +8,14 @@
     'rxjs':                       'node_modules/rxjs',
     'zonejs':                             'node_modules/zone.js',
     'reflect-metadata':                   'node_modules/reflect-metadata'
-  };
+    };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { main: '/bundles/Rx.umd.js', defaultExtension: 'js' },
     'zonejs':                             { main: 'zone', defaultExtension: 'js' },
-  'reflect-metadata':                   { main: 'Reflect', defaultExtension: 'js' }
+    'reflect-metadata':                   { main: 'Reflect', defaultExtension: 'js' }
   };
 
   var ngPackageNames = [

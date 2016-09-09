@@ -1,6 +1,6 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import { provideRouter, RouterConfig, RouterModule, ExtraOptions } from '@angular/router';
+
 import { LocationStrategy, HashLocationStrategy } from "@angular/common";
-import { Type } from '@angular/core';
 
 import { IndexComponent } from './components/index.component';
 import { RushComponent } from './components/rush.component';
@@ -8,30 +8,34 @@ import { LeadershipComponent } from './components/leadership.component';
 import { SignupComponent } from './components/signup.component';
 import { PhilanthropyComponent } from './components/philanthropy.component';
 
-const routes: RouterConfig = [
+const routes_config: RouterConfig = [
     {
         path: 'rush',
-        component: <Type>RushComponent
+        component: RushComponent
     },
     {
         path: '',
-        component: <Type>IndexComponent,
+        component: IndexComponent,
     },
     {
         path: 'leadership',
-        component: <Type>LeadershipComponent
+        component: LeadershipComponent
     },
     {
         path: 'list',
-        component: <Type>SignupComponent
+        component: SignupComponent
     },
     {
         path: 'philanthropy',
-        component: <Type>PhilanthropyComponent
+        component: PhilanthropyComponent
     }
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-    provideRouter(routes),
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
-];
+var options: ExtraOptions = {useHash: true};
+
+export const router = RouterModule.forRoot(routes_config);
+
+// export const APP_ROUTER_PROVIDERS = [
+//     provideRouter(routes),
+//     { provide: LocationStrategy, useClass: HashLocationStrategy }
+// ];

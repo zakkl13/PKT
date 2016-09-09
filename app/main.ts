@@ -1,17 +1,11 @@
 /// <reference path="../typings/index_es5.d.ts" />
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { Type, enableProdMode } from "@angular/core";
-import { HTTP_PROVIDERS } from "@angular/http";
-import {provideForms, disableDeprecatedForms} from '@angular/forms';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule }              from './app.module';
 
 enableProdMode();
 
-import { RootComponent } from "./components/root.component";
-import { APP_ROUTER_PROVIDERS } from "./routes";
+platformBrowserDynamic().bootstrapModule(AppModule);
 
-bootstrap(<Type>RootComponent, [
-	APP_ROUTER_PROVIDERS,
-	HTTP_PROVIDERS,
-	disableDeprecatedForms(),
-	provideForms()]);
+
 

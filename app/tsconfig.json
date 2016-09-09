@@ -9,9 +9,9 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "filesGlob": [
-    "node_modules/angular2/typings/browser.d.ts"
-  ],
+  // "filesGlob": [
+  //   "node_modules/angular2/typings/browser.d.ts"
+  // ],
   "exclude": [
     "static",
     "typings/main",

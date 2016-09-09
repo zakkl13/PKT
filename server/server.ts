@@ -23,6 +23,8 @@ app.use("/api/signup", signupApiRouter);
 app.use("/api/rushevents", RushEventRouter);
 app.use("/api/leaders", LeadershipRouter);
 app.use("/", express.static(path.join(__dirname, '../public')));
-
+app.use('/*', function(req, res) {
+  res.sendFile(path.join(__dirname,'../public/index.html'));
+});
 
 export { app }
