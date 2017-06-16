@@ -1,7 +1,5 @@
 # VT Phi Kappa Tau Website
 
-[ ![Codeship Status for zakkl13/PKT](https://codeship.com/projects/5a383150-303c-0134-d38e-7603af744759/status?branch=master)](https://codeship.com/projects/164142)
-
 ### Technology Overview
 **Infrastructure & Workflow**
 
