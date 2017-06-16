@@ -2,22 +2,6 @@
 
 [ ![Codeship Status for zakkl13/PKT](https://codeship.com/projects/5a383150-303c-0134-d38e-7603af744759/status?branch=master)](https://codeship.com/projects/164142)
 
-### Upcoming Features
-* Phitauberfest (PKT annual fall philanthropy event) information page
-* Alumni section
- * Alumni updated-contact-information collection
- * Contact to current VP of Alumni Relations
- * Donation collection
- * Full VT PKT alumni directory
-
-### Marketing
-* Include URL on A-Frames around campus
-* Include URL on paper handouts and business cards
-* Have URL in email signatures
-* Use site for philanthropy purposes to drive traffic
-* vtPKT.com stickers
-* Facebook advertisments
-
 ### Technology Overview
 **Infrastructure & Workflow**
 
@@ -95,6 +79,22 @@ can be used to toggle whether the object is returned by the API or not.
 You are now ready to develop, make changes then run `gulp build:prod` (alternate build for development is being... developed) and run
 `npm start` and you should see the application running at `localhost:3000`. While the app is running you may use convenience tasks
 such as `gulp dev:frontend` which re-copies all .html, .css, and image files into the public folder without requiring a build or application restart.
+
+### Upcoming Features
+* Phitauberfest (PKT annual fall philanthropy event) information page
+* Alumni section
+ * Alumni updated-contact-information collection
+ * Contact to current VP of Alumni Relations
+ * Donation collection
+ * Full VT PKT alumni directory
+
+### Marketing
+* Include URL on A-Frames around campus
+* Include URL on paper handouts and business cards
+* Have URL in email signatures
+* Use site for philanthropy purposes to drive traffic
+* vtPKT.com stickers
+* Facebook advertisments
 
 ### Core Roadmap
 * Test Test Test
